@@ -7,9 +7,9 @@ namespace Questao2.Rest;
 
 public class JogosFutebolApiRest
 {
-    public async Task<ResponseGenerico<PageModel>> BuscarPartidasPorAnoETime(int year, string team1, int page)
+    public async Task<ResponseGenerico<PageModel>> BuscarPartidasPorAnoETime(int year, string team, int page, int teamNumber = 1)
     {
-        var request = new HttpRequestMessage(HttpMethod.Get, $"https://jsonmock.hackerrank.com/api/football_matches?year={year}&team1={team1}&page={page}");
+        var request = new HttpRequestMessage(HttpMethod.Get, $"https://jsonmock.hackerrank.com/api/football_matches?year={year}&team{teamNumber}={team}&page={page}");
 
         var response = new ResponseGenerico<PageModel>();
         try

@@ -23,7 +23,7 @@ public class Program
 
         GetTotalScoredGoals(teamName, year);
 
-
+       // 22 32 9
         // Output expected:
         // Team Paris Saint - Germain scored 109 goals in 2013
         // Team Chelsea scored 92 goals in 2014
