@@ -3,20 +3,13 @@
 using Questao2.Rest;
 using Questao2.Services;
 
-
-
-
-
 public class Program
-{
-
-    
+{   
     public static void Main()
     {
         string teamName = "Paris Saint-Germain";
         int year = 2013;
         GetTotalScoredGoals(teamName, year);
-
 
         teamName = "Chelsea";
         year = 2014;
@@ -37,5 +30,4 @@ public class Program
         Console.WriteLine("Team " + team + " scored " + totalGoals.ToString() + " goals in " + year);
        
     }
-
 }
