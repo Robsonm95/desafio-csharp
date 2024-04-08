@@ -1,7 +1,6 @@
-﻿using Questao5.Domain.Abstractions;
-using Questao5.Domain.Entities;
-using MediatR;
+﻿using MediatR;
 using Questao5.Application.Members.Queries.Response;
+using Questao5.Domain.Abstractions;
 
 namespace Questao5.Application.Members.Queries;
 
