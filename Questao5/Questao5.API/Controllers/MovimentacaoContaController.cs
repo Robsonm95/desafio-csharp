@@ -13,15 +13,18 @@ public class MovimentacaoContaController : ControllerBase
     {
         _mediator = mediator;
     }
-    
+
     [HttpPost]
     public async Task<IActionResult> CreateMovimento(CreateMovimentoCommand command)
     {
-        var createMovimento = await _mediator.Send(command);
-
-        return createMovimento != null ? Ok(createMovimento) : NotFound("Movimento not found.");
+        try
+        {
+            var createMovimento = await _mediator.Send(command);
+            return createMovimento != null ? Ok(createMovimento) : NotFound("Movimento not found.");
+        }
+        catch (ArgumentException ex)
+        {
+            return BadRequest(ex.Message);
+        }
     }
-
-
-   
 }
