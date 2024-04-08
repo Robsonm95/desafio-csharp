@@ -4,7 +4,6 @@ using Questao5.Application.Members.Commands;
 using Questao5.Domain.Abstractions;
 using Questao5.Domain.Entities;
 using System.Text.Json;
-using System.Threading;
 using static Questao5.Application.Members.Commands.CreateMovimentoCommand;
 
 namespace Questao5.Teste.Commands;
@@ -16,6 +15,7 @@ public class CreateMovimentoCommandTest
     {
         _cancellationToken = new CancellationToken();
     }
+
     [Fact]
     public void CriaMovimentacaoComSucesso()
     {
@@ -27,7 +27,7 @@ public class CreateMovimentoCommandTest
         
 
         CreateMovimentoCommand request = FabricaDados.GetRequest();
-        Movimento retorno = FabricaDados.GetMovimento();
+        Movimento retorno = FabricaDados.GetMovimento(Guid.NewGuid().ToString());
 
         contaCorrenteRepository.GetContaCorrenteById(request.IdContaCorrente).Returns(FabricaDados.GetContaCorrente(ativo: true));
         movimentoRepository.AddMovimentacao(Arg.Any<Movimento>()).Returns(retorno);
@@ -82,7 +82,7 @@ public class CreateMovimentoCommandTest
         var validator = Substitute.For<IValidator<CreateMovimentoCommand>>();
         
         CreateMovimentoCommand request = FabricaDados.GetRequest();
-        Movimento retorno = FabricaDados.GetMovimento();;
+        Movimento retorno = FabricaDados.GetMovimento(Guid.NewGuid().ToString());;
 
         var commandHandler = new CreateMovimentoCommandHandler(movimentoRepository, contaCorrenteRepository, idempotenciaRepository, validator);
 
@@ -103,7 +103,7 @@ public class CreateMovimentoCommandTest
         var validator = Substitute.For<IValidator<CreateMovimentoCommand>>();
         
         CreateMovimentoCommand request = FabricaDados.GetRequest();
-        Movimento retorno = FabricaDados.GetMovimento();
+        Movimento retorno = FabricaDados.GetMovimento(Guid.NewGuid().ToString());
 
 
         contaCorrenteRepository.GetContaCorrenteById(request.IdContaCorrente).Returns(FabricaDados.GetContaCorrente(ativo: false));
@@ -129,7 +129,7 @@ public class CreateMovimentoCommandTest
         
 
         CreateMovimentoCommand request = FabricaDados.GetRequest("F");
-        Movimento retorno = FabricaDados.GetMovimento();
+        Movimento retorno = FabricaDados.GetMovimento(Guid.NewGuid().ToString());
 
         contaCorrenteRepository.GetContaCorrenteById(request.IdContaCorrente).Returns(FabricaDados.GetContaCorrente(ativo: true));
 
@@ -140,7 +140,6 @@ public class CreateMovimentoCommandTest
 
         //Assert
         Assert.Equal("One or more errors occurred. (INVALID_TYPE)", resultado.Exception.Message);
-
 
     }
 }

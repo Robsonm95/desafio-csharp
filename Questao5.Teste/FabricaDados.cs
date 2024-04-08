@@ -6,15 +6,15 @@ namespace Questao5.Teste;
 
 public class FabricaDados
 {
-    public static Movimento GetMovimento(string tipo = "C")
+    public static Movimento GetMovimento(string idContaCorrente, string tipo = "C", decimal valor = 600)
     {
         return new Movimento()
         {
             IdMovimento = Guid.NewGuid().ToString(),
-            IdContaCorrente = Guid.NewGuid().ToString(),
+            IdContaCorrente = idContaCorrente,
             DataMovimento = "24/06/2021",
             TipoMovimento = tipo,
-            Valor = 600
+            Valor = valor
         };
     }
 
@@ -36,7 +36,7 @@ public class FabricaDados
         {
             Chave_Idempotencia = Guid.NewGuid().ToString(),
             Requisicao = JsonSerializer.Serialize(GetRequest()),
-            Resultado = JsonSerializer.Serialize(GetMovimento())
+            Resultado = JsonSerializer.Serialize(GetMovimento(Guid.NewGuid().ToString()))
         };
     }
 

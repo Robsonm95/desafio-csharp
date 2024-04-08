@@ -15,7 +15,7 @@ namespace Questao5.Teste.NewFolder
             // Arrange
             var _mediator = Substitute.For<IMediator>();
             CreateMovimentoCommand request = FabricaDados.GetRequest();
-            Movimento retorno = FabricaDados.GetMovimento();
+            Movimento retorno = FabricaDados.GetMovimento(Guid.NewGuid().ToString());
 
             _mediator.Send(request).Returns(retorno);
             var controller = new MovimentacaoContaController(_mediator);
