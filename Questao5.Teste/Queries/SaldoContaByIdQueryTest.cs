@@ -1,10 +1,7 @@
-﻿using FluentValidation;
-using NSubstitute;
-using Questao5.Application.Members.Commands;
+﻿using NSubstitute;
 using Questao5.Application.Members.Queries;
 using Questao5.Domain.Abstractions;
 using Questao5.Domain.Entities;
-using static Questao5.Application.Members.Commands.CreateMovimentoCommand;
 using static Questao5.Application.Members.Queries.SaldoContaByIdQuery;
 
 namespace Questao5.Teste.Queries;
