@@ -1,5 +1,5 @@
-﻿using Questao5.Application.Members.Commands;
-using Questao5.Application.Members.Queries;
+﻿using Questao5.Application.Movimento.Commands;
+using Questao5.Application.Movimento.Queries;
 using Questao5.Domain.Abstractions;
 using MediatR;
 using Microsoft.AspNetCore.Mvc;
@@ -20,9 +20,9 @@ public class SaldoContaController : ControllerBase
     public async Task<IActionResult> GetSaldoConta(string id)
     {
         var query = new SaldoContaByIdQuery { Id = id };
-        var member = await _mediator.Send(query);
+        var movimento = await _mediator.Send(query);
 
-        return member != null ? Ok(member) : NotFound("Member not found.");
+        return movimento != null ? Ok(movimento) : NotFound("Movimento not found.");
     }
 
    

@@ -2,7 +2,7 @@
 using Microsoft.Data.Sqlite;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Questao5.Application.Members.Commands.Validations;
+using Questao5.Application.Movimento.Commands.Validations;
 using Questao5.Domain.Abstractions;
 using Questao5.Infrastructure.Repositories;
 using Questao5.Infrastructure.Sqlite;

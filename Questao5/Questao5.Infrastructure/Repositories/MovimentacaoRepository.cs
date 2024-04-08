@@ -21,13 +21,6 @@ public class MovimentacaoRepository : IMovimentacaoRepository
         return await _dbConnection.QueryAsync<Movimento>(query, new { Id = id });
     }
 
-    public async Task<IEnumerable<Movimento>> GetMembers()
-    {
-        string query = "SELECT * FROM movimento";
-        return await _dbConnection.QueryAsync<Movimento>(query);
-        
-    }
-
     public async Task<Movimento> AddMovimentacao(Movimento movimento)
     {
         movimento.IdMovimento = Guid.NewGuid().ToString();

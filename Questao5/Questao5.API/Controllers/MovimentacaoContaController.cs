@@ -1,6 +1,6 @@
 ﻿using MediatR;
 using Microsoft.AspNetCore.Mvc;
-using Questao5.Application.Members.Commands;
+using Questao5.Application.Movimento.Commands;
 
 namespace Questao5.API.Controllers;
 
@@ -15,11 +15,11 @@ public class MovimentacaoContaController : ControllerBase
     }
     
     [HttpPost]
-    public async Task<IActionResult> CreateMember(CreateMovimentoCommand command)
+    public async Task<IActionResult> CreateMovimento(CreateMovimentoCommand command)
     {
-        var updatedMember = await _mediator.Send(command);
+        var createMovimento = await _mediator.Send(command);
 
-        return updatedMember != null ? Ok(updatedMember) : NotFound("Member not found.");
+        return createMovimento != null ? Ok(createMovimento) : NotFound("Movimento not found.");
     }
 
 

@@ -1,4 +1,4 @@
-﻿namespace Questao5.Application.Members.Queries.Response;
+﻿namespace Questao5.Application.Movimento.Queries.Response;
 
 public class SaldoContaResponse
 {

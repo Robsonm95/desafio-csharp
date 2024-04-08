@@ -1,7 +1,7 @@
 ﻿using FluentValidation;
 using MediatR;
 
-namespace Questao5.Application.Members.Commands.Validations;
+namespace Questao5.Application.Movimento.Commands.Validations;
 
 public class ValidationBehaviour<TRequest, TResponse> :
     IPipelineBehavior<TRequest, TResponse> where TRequest : IRequest<TResponse>

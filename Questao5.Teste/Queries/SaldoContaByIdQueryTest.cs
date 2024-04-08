@@ -1,8 +1,8 @@
 ﻿using NSubstitute;
-using Questao5.Application.Members.Queries;
+using Questao5.Application.Movimento.Queries;
 using Questao5.Domain.Abstractions;
 using Questao5.Domain.Entities;
-using static Questao5.Application.Members.Queries.SaldoContaByIdQuery;
+using static Questao5.Application.Movimento.Queries.SaldoContaByIdQuery;
 
 namespace Questao5.Teste.Queries;
 

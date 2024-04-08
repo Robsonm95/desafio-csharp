@@ -1,10 +1,10 @@
 ﻿using FluentValidation;
 using NSubstitute;
-using Questao5.Application.Members.Commands;
+using Questao5.Application.Movimento.Commands;
 using Questao5.Domain.Abstractions;
 using Questao5.Domain.Entities;
 using System.Text.Json;
-using static Questao5.Application.Members.Commands.CreateMovimentoCommand;
+using static Questao5.Application.Movimento.Commands.CreateMovimentoCommand;
 
 namespace Questao5.Teste.Commands;
 

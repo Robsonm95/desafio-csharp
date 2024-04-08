@@ -1,7 +1,7 @@
 using MediatR;
 using NSubstitute;
 using Questao5.API.Controllers;
-using Questao5.Application.Members.Commands;
+using Questao5.Application.Movimento.Commands;
 using Questao5.Domain.Entities;
 
 namespace Questao5.Teste.NewFolder
@@ -21,7 +21,7 @@ namespace Questao5.Teste.NewFolder
             var controller = new MovimentacaoContaController(_mediator);
 
             // Act
-            var actual = controller.CreateMember(request);
+            var actual = controller.CreateMovimento(request);
 
             //var atu = actual.Result.mi;
             // Assert
