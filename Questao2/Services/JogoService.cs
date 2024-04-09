@@ -30,7 +30,11 @@ public class JogoService
         {
             response = _jogoApi.BuscarPartidasPorAnoETime(year, team1, pagina, teamNumber).Result;
 
-            quantidadeGols += response.DadosRetorno.Data.Sum(x => Int32.Parse(x.Team1Goals));
+            if (teamNumber == 1)
+                quantidadeGols += response.DadosRetorno.Data.Sum(x => Int32.Parse(x.Team1Goals));
+
+            else if (teamNumber == 2)
+                quantidadeGols += response.DadosRetorno.Data.Sum(x => Int32.Parse(x.Team2Goals));
 
             pagina++;
         }

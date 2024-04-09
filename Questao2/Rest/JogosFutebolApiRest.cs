@@ -32,11 +32,11 @@ public class JogosFutebolApiRest
                 }
             }
                 //  Block of code to try
-            }
-            catch (Exception e)
-            {
-                //  Block of code to handle errors
-            }
+        }
+        catch (Exception e)
+        {
+            //  Block of code to handle errors
+        }
         return response;
     }
 }
